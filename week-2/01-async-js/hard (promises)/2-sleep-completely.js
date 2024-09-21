@@ -5,6 +5,21 @@
  */
 
 function sleep(milliseconds) {
+
+  return new Promise((resolve) => {
+        const start = Date.now();
+        while(Date.now()-start<milliseconds)
+        {
+            // this loop efficiently blocks the thread
+        }
+        resolve(`Slept for ${milliseconds} milliseconds`);
+  
 }
+                     
+sleep(3000).then((message)=>{
+    console.log(message);
+})
+                     
+                     
 
 module.exports = sleep;
